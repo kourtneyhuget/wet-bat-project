@@ -1,11 +1,16 @@
-const express = require("express");
-const app = express();
-const port = 9000;
+// PRETEND INDEX IS USERS.JS
+// API GET POSTS FOR USERS
 
-app.get("/", (req, res) => {
+//express server
+const express = require("express");
+const router = express.Router();
+
+router.get("/", (req, res) => {
   res.status(200).send("Hello World!");
 });
 
-app.listen(port, () => {
-  console.log(`App running on port ${port}.`);
-});
+// router.listen(port, () => {
+//   console.log(`App running on port ${port}.`);
+// });
+
+module.exports = router;
