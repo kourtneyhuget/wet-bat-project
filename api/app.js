@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const bodyParser = require("body-parser");
 
 const indexRouter = require("./routes/index");
 
@@ -14,6 +15,15 @@ const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
 const pool = new Pool(dbParams);
 pool.connect();
+
+// configure the app to use bodyParser
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+app.use(bodyParser.json());
+app.use(cors());
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
