@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import "../styles/QuickQuote.scss";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
+import { CreateAQuote } from "./CreateAQuote";
 
 //drop down options for tranportation text field
 const transportations = [
@@ -45,6 +45,7 @@ const theme = createMuiTheme({
 export function QuickQuote() {
   const classes = useStyles();
   const [transportation, setTransportation] = React.useState("Transportation");
+  const [date, setDate] = React.useState(Date());
 
   const handleChange = (event) => {
     setTransportation(event.target.value);
@@ -110,7 +111,6 @@ export function QuickQuote() {
               id="date"
               label="Departure Date"
               type="date"
-              defaultValue="2020-01-01"
               className={classes.textField}
               InputLabelProps={{
                 shrink: true,
@@ -122,7 +122,6 @@ export function QuickQuote() {
               id="date"
               label="Return Date"
               type="date"
-              defaultValue="2020-01-01"
               className={classes.textField}
               InputLabelProps={{
                 shrink: true,
@@ -156,17 +155,10 @@ export function QuickQuote() {
               ))}
             </TextField>
           </div>
+          <div className="create-a-quote-drawer">
+            <CreateAQuote />
+          </div>
         </form>
-        <div className="submit-button">
-          <Button
-            variant="contained"
-            size="large"
-            color="primary"
-            className={classes.root}
-          >
-            Submit Quote
-          </Button>
-        </div>
       </ThemeProvider>
     </div>
   );
