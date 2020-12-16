@@ -1,12 +1,11 @@
 import React from "react";
 import Header from "./Header";
+import { QuickQuote } from "./QuickQuote";
 
-function MainPage() {
+export function MainPage() {
   return (
     <div className="main-page-container">
-      <p>HELLO, WORLD</p>
+      <QuickQuote />
     </div>
   );
 }
-
-export default MainPage;
