@@ -70,8 +70,27 @@ module.exports = (db) => {
         console.log("THIS IS DATA", data);
         res.json(data.rows);
       })
-      .catch(err);
-    console.error(err.message);
+      .catch((error) => {
+        console.error(error.message);
+      });
+  });
+
+  router.put("/quotescompleted/:id", async (req, res) => {
+    const { selectedId } = req.body;
+    const queryParams = [selectedId];
+    const queryString = `
+    UPDATE quotes
+    SET is_converted = true
+    WHERE client_id = $1
+    RETURNING *;
+    `;
+    db.query(queryString, queryParams)
+      .then((data) => {
+        res.json(data.rows);
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
   });
   return router;
 };
