@@ -12,6 +12,7 @@ export function MainPage() {
   //   .catch((err) => console.log("err", err));
   return (
     <div className="main-page-container">
+      <Header />
       <QuickQuote />
     </div>
   );
