@@ -55,5 +55,23 @@ module.exports = (db) => {
         res.status(500).json({ error: err.message });
       });
   });
+
+  router.get("/pending", async (req, res) => {
+    db.query(
+      `
+    SELECT quotes.*, clients.*
+    FROM quotes
+    INNER JOIN clients 
+    ON clients.id = client_id
+    WHERE quotes.is_converted = FALSE
+    `
+    )
+      .then((data) => {
+        console.log("THIS IS DATA", data);
+        res.json(data.rows);
+      })
+      .catch(err);
+    console.error(err.message);
+  });
   return router;
 };
