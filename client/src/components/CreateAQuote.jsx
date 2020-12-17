@@ -8,11 +8,14 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import FormControl from "@material-ui/core/FormControl";
 import { Modal } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import axios from "axios";
 
+//TEST THIS OUT
 function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
 
+//not pure function, need to style on first render
 function getModalStyle() {
   const top = 50 + rand();
   const left = 50 + rand();
@@ -61,10 +64,9 @@ const useStyles = makeStyles((theme) => ({
 
 export function CreateAQuote() {
   const classes = useStyles();
-  // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = useState(getModalStyle);
   const [open, setOpen] = useState(false);
-  const [amountValues, setAmountValues] = useState("");
+  const [price, setPrice] = useState("");
 
   const handleOpen = () => {
     setOpen(true);
@@ -74,13 +76,23 @@ export function CreateAQuote() {
     setOpen(false);
   };
 
-  const handleChange = (prop) => (event) => {
-    setAmountValues({ ...amountValues, [prop]: event.target.value });
+  const changePrice = (event) => {
+    setPrice(event.target.value);
   };
+
+  // function submitPrice(event) {
+  //   event.preventDefault();
+  //   axios.put("/api/price", {
+  //     price: price,
+  //   });
+  //   .catch((error) => {
+  //     console.error('Error: ', error)
+  //   })
+  // }
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <h2 id="simple-modal-title">Please enter an estimated cost</h2>
+      <h2 id="simple-modal-title">Please enter cost of the package</h2>
       <FormControl
         fullWidth
         className={classes.margin}
@@ -90,8 +102,8 @@ export function CreateAQuote() {
         <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
         <OutlinedInput
           id="outlined-adornment-amount"
-          value={amountValues.amount}
-          onChange={handleChange(amountValues)}
+          value={price}
+          onChange={changePrice}
           startAdornment={<InputAdornment position="start">$</InputAdornment>}
           labelWidth={60}
         />

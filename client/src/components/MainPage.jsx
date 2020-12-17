@@ -9,3 +9,10 @@ export function MainPage() {
     </div>
   );
 }
+
+// axios
+// .get("/api/test")
+// .then((res) => {
+//   console.log("made it back to frontend", res);
+// })
+// .catch((err) => console.log("err", err));
