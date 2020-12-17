@@ -47,7 +47,6 @@ const theme = createMuiTheme({
 
 export function QuickQuote() {
   const classes = useStyles();
-  const [transportation, setTransportation] = useState("Transportation");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -57,7 +56,9 @@ export function QuickQuote() {
   const [departDate, setDepartDate] = useState("");
   const [returnDate, setReturnDate] = useState("");
   const [travelers, setTravelers] = useState("");
+  const [transportation, setTransportation] = useState("Transportation");
   const [price, setPrice] = useState("");
+  const [error, setError] = useState("");
 
   const changeFirstName = (event) => {
     setFirstName(event.target.value);
@@ -103,44 +104,62 @@ export function QuickQuote() {
     setPrice(event.target.value);
   };
 
-  // const validate = () => {
-  //   if (firstName === "") {
-  //     setError;
-  //     ("Name cannot be blank");
-  //   }
-  // };
+  const validate = () => {
+    if (firstName === "") {
+      setError("First name cannot be blank");
+      return;
+    } else if (lastName === "") {
+      setError("Last name cannot be blank");
+      return;
+    } else if (phoneNumber === "") {
+      setError("Phone number cannot be blank");
+      return;
+    } else if (departLocation === "") {
+      setError("Departure location cannot be blank");
+      return;
+    } else if (returnLocation === "") {
+      setError("Return location cannot be blank");
+      return;
+    } else if (departDate === "") {
+      setError("Departure date cannot be blank");
+      return;
+    } else if (returnDate === "") {
+      setError("Return date cannot be blank");
+      return;
+    } else if (travelers === "") {
+      setError("Travelers cannot be blank");
+      return;
+    } else if (price === "") {
+      setError("Price cannot be blank");
+      return;
+    }
+    setError("");
+    return true;
+  };
 
   const submitQuote = async (event) => {
-    console.log("IN SUBMIT QUOTE");
-    axios
-      .put("/api/quotes", {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        phoneNumber: phoneNumber,
-        departLocation: departLocation,
-        returnLocation: returnLocation,
-        departDate: departDate,
-        returnDate: returnDate,
-        travelers: travelers,
-        transportation: transportation,
-        price: price,
-      })
-      .then((res) => {
-        console.log("WE MADE IT");
-        //   axios.put("/api/quotes", {
-        //     departLocation: departLocation,
-        //     returnLocation: returnLocation,
-        //     departDate: departDate,
-        //     returnDate: returnDate,
-        //     travelers: travelers,
-        //     clientId: res.rows[0].id,
-        //   });
-        // window.location = "/";
-      })
-      .catch((error) => {
-        console.error("Error: ", error);
-      });
+    if (validate()) {
+      axios
+        .put("/api/quotes", {
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          phoneNumber: phoneNumber,
+          departLocation: departLocation,
+          returnLocation: returnLocation,
+          departDate: departDate,
+          returnDate: returnDate,
+          travelers: travelers,
+          transportation: transportation,
+          price: price,
+        })
+        .then((res) => {
+          console.log("WE MADE IT");
+        })
+        .catch((error) => {
+          console.error("Error: ", error);
+        });
+    }
   };
 
   return (
@@ -157,6 +176,7 @@ export function QuickQuote() {
               placeholder="First Name"
               multiline
               variant="outlined"
+              required
             />
             <TextField
               color="secondary"
@@ -167,6 +187,7 @@ export function QuickQuote() {
               placeholder="Last Name"
               multiline
               variant="outlined"
+              required
             />
             <TextField
               color="secondary"
@@ -187,6 +208,7 @@ export function QuickQuote() {
               placeholder="Phone Number"
               multiline
               variant="outlined"
+              required
             />
           </div>
           <div className="travel-information">
@@ -199,6 +221,7 @@ export function QuickQuote() {
               placeholder="Enter Airport"
               multiline
               variant="outlined"
+              required
             />
             <TextField
               color="secondary"
@@ -209,6 +232,7 @@ export function QuickQuote() {
               placeholder="Enter Airport"
               multiline
               variant="outlined"
+              required
             />
             <TextField
               color="secondary"
@@ -222,6 +246,7 @@ export function QuickQuote() {
                 shrink: true,
               }}
               variant="outlined"
+              required
             />
             <TextField
               color="secondary"
@@ -235,6 +260,7 @@ export function QuickQuote() {
                 shrink: true,
               }}
               variant="outlined"
+              required
             />
             <TextField
               color="secondary"
@@ -245,6 +271,7 @@ export function QuickQuote() {
               placeholder="Travelers"
               multiline
               variant="outlined"
+              required
             />
             <TextField
               color="secondary"
@@ -273,6 +300,7 @@ export function QuickQuote() {
               placeholder="$"
               multiline
               variant="outlined"
+              required
             />
           </div>
           <Button
@@ -280,20 +308,13 @@ export function QuickQuote() {
             variant="contained"
             size="large"
             color="primary"
+            type="submit"
           >
             Submit the quote
           </Button>
+          <section className="form_validation">{error}</section>
         </form>
       </ThemeProvider>
     </div>
   );
 }
-
-// axios.put("/api/quotes", {
-//   departLocation: departLocation,
-//   returnLocation: returnLocation,
-//   departDate: departDate,
-//   returnDate: returnDate,
-//   travelers: travelers,
-//   clientId: res,
-// });

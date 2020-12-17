@@ -43,8 +43,6 @@ module.exports = (db) => {
           transportation,
           price,
         ];
-        console.log("departDate", typeof departDate);
-        console.log("departDate", departDate);
         const queryString = `
           INSERT INTO quotes(client_id, departure_location, destination_location, depart_date, return_date, people, transportation, price)
           VALUES($1, $2, $3, $4, $5, $6, $7, $8)
