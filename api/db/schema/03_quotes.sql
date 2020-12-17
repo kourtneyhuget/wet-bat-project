@@ -2,7 +2,6 @@ DROP TABLE IF EXISTS quotes CASCADE;
 
 CREATE TABLE quotes (
   id SERIAL PRIMARY KEY NOT NULL,
-  employee_id INTEGER REFERENCES employees(id) ON DELETE CASCADE,
   client_id INTEGER REFERENCES clients(id) ON DELETE CASCADE,
   departure_location VARCHAR(3) NOT NULL,
   destination_location VARCHAR(3) NOT NULL,
@@ -11,5 +10,5 @@ CREATE TABLE quotes (
   people NUMERIC NOT NULL,
   transportation TEXT NOT NULL,
   price NUMERIC,
-  is_converted BOOLEAN NOT NULL DEFAULT FALSE
+  is_converted BOOLEAN DEFAULT FALSE
 );

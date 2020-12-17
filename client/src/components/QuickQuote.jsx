@@ -57,10 +57,7 @@ export function QuickQuote() {
   const [departDate, setDepartDate] = useState("");
   const [returnDate, setReturnDate] = useState("");
   const [travelers, setTravelers] = useState("");
-
-  const handleChange = (event) => {
-    setTransportation(event.target.value);
-  };
+  const [price, setPrice] = useState("");
 
   const changeFirstName = (event) => {
     setFirstName(event.target.value);
@@ -94,8 +91,16 @@ export function QuickQuote() {
     setReturnDate(event.target.value);
   };
 
+  const changeTransportation = (event) => {
+    setTransportation(event.target.value);
+  };
+
   const changeTravelers = (event) => {
     setTravelers(event.target.value);
+  };
+
+  const changePrice = (event) => {
+    setPrice(event.target.value);
   };
 
   // const validate = () => {
@@ -105,29 +110,38 @@ export function QuickQuote() {
   //   }
   // };
 
-  function submitQuote(event) {
-    event.preventDefault();
+  const submitQuote = async (event) => {
+    console.log("IN SUBMIT QUOTE");
     axios
       .put("/api/quotes", {
         firstName: firstName,
         lastName: lastName,
         email: email,
         phoneNumber: phoneNumber,
+        departLocation: departLocation,
+        returnLocation: returnLocation,
+        departDate: departDate,
+        returnDate: returnDate,
+        travelers: travelers,
+        transportation: transportation,
+        price: price,
       })
       .then((res) => {
-        axios.put("/api/quotes", {
-          departLocation: departLocation,
-          returnLocation: returnLocation,
-          departDate: departDate,
-          returnDate: returnDate,
-          travelers: travelers,
-          clientId: res,
-        });
+        console.log("WE MADE IT");
+        //   axios.put("/api/quotes", {
+        //     departLocation: departLocation,
+        //     returnLocation: returnLocation,
+        //     departDate: departDate,
+        //     returnDate: returnDate,
+        //     travelers: travelers,
+        //     clientId: res.rows[0].id,
+        //   });
+        // window.location = "/";
       })
       .catch((error) => {
         console.error("Error: ", error);
       });
-  }
+  };
 
   return (
     <div className="quick-quote-container">
@@ -238,7 +252,7 @@ export function QuickQuote() {
               select
               label="Transportation"
               value={transportation}
-              onChange={handleChange}
+              onChange={changeTransportation}
               SelectProps={{
                 native: true,
               }}
@@ -254,26 +268,32 @@ export function QuickQuote() {
               color="secondary"
               id="outlined-textarea"
               label="Price"
-              onChange={changeTravelers}
-              value={travelers}
+              onChange={changePrice}
+              value={price}
               placeholder="$"
               multiline
               variant="outlined"
-              width="50%"
             />
           </div>
-          <div className="pop-up-quote">
-            <Button
-              onSubmit={submitQuote}
-              variant="contained"
-              size="large"
-              color="primary"
-            >
-              Submit the quote
-            </Button>
-          </div>
+          <Button
+            onClick={submitQuote}
+            variant="contained"
+            size="large"
+            color="primary"
+          >
+            Submit the quote
+          </Button>
         </form>
       </ThemeProvider>
     </div>
   );
 }
+
+// axios.put("/api/quotes", {
+//   departLocation: departLocation,
+//   returnLocation: returnLocation,
+//   departDate: departDate,
+//   returnDate: returnDate,
+//   travelers: travelers,
+//   clientId: res,
+// });
