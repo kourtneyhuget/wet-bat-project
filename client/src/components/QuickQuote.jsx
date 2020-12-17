@@ -4,7 +4,6 @@ import TextField from "@material-ui/core/TextField";
 import "../styles/QuickQuote.scss";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
-import { CreateAQuote } from "./CreateAQuote";
 import axios from "axios";
 import { Button } from "@material-ui/core";
 
@@ -308,7 +307,6 @@ export function QuickQuote() {
             variant="contained"
             size="large"
             color="primary"
-            type="submit"
           >
             Submit the quote
           </Button>
