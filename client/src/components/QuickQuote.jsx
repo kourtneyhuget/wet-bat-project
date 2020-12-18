@@ -6,6 +6,11 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import axios from "axios";
 import { Button } from "@material-ui/core";
+import Table from "@material-ui/core/Table";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import Paper from "@material-ui/core/Paper";
 
 //drop down options for tranportation text field
 const transportations = [
@@ -40,6 +45,9 @@ const theme = createMuiTheme({
     },
     secondary: {
       main: "#5F6CAF",
+    },
+    text: {
+      primary: "#FFFFFF",
     },
   },
 });
@@ -177,153 +185,170 @@ export function QuickQuote(props) {
   return (
     <div className="quick-quote-container">
       <ThemeProvider theme={theme}>
+        <TableContainer className={classes.container} component={Paper}>
+          <Table stickyHeader aria-label="sticky table">
+            <TableHead>
+              <TableCell
+                align="center"
+                colSpan={5}
+                style={{ color: "#5BBFBA" }}
+              >
+                <span id="title">QUICK QUOTE</span>
+              </TableCell>
+            </TableHead>
+          </Table>
+        </TableContainer>
         <form className={classes.root} noValidate autoComplete="off">
-          <div className="client-information">
-            <TextField
-              color="secondary"
-              id="outlined-textarea"
-              label="First Name"
-              onChange={changeFirstName}
-              value={firstName}
-              placeholder="First Name"
-              multiline
-              variant="outlined"
-              required
-            />
-            <TextField
-              color="secondary"
-              id="outlined-textarea"
-              label="Last Name"
-              onChange={changeLastName}
-              value={lastName}
-              placeholder="Last Name"
-              multiline
-              variant="outlined"
-              required
-            />
-            <TextField
-              color="secondary"
-              id="outlined-textarea"
-              label="Email"
-              onChange={changeEmail}
-              value={email}
-              placeholder="Email"
-              multiline
-              variant="outlined"
-            />
-            <TextField
-              color="secondary"
-              id="outlined-textarea"
-              label="Phone Number"
-              onChange={changePhoneNumber}
-              value={phoneNumber}
-              placeholder="Phone Number"
-              multiline
-              variant="outlined"
-              required
-            />
+          <div className="input-fields">
+            <div className="client-information">
+              <TextField
+                color="secondary"
+                id="outlined-textarea"
+                label="First Name"
+                onChange={changeFirstName}
+                value={firstName}
+                placeholder="First Name"
+                multiline
+                variant="outlined"
+                required
+              />
+              <TextField
+                color="secondary"
+                id="outlined-textarea"
+                label="Last Name"
+                onChange={changeLastName}
+                value={lastName}
+                placeholder="Last Name"
+                multiline
+                variant="outlined"
+                required
+              />
+              <TextField
+                color="secondary"
+                id="outlined-textarea"
+                label="Email"
+                onChange={changeEmail}
+                value={email}
+                placeholder="Email"
+                multiline
+                variant="outlined"
+              />
+              <TextField
+                color="secondary"
+                id="outlined-textarea"
+                label="Phone Number"
+                onChange={changePhoneNumber}
+                value={phoneNumber}
+                placeholder="Phone Number"
+                multiline
+                variant="outlined"
+                required
+              />
+            </div>
+            <div className="travel-information">
+              <TextField
+                color="secondary"
+                id="outlined-textarea"
+                label="Departure Location"
+                onChange={changeDepartLocation}
+                value={departLocation}
+                placeholder="Enter Airport"
+                multiline
+                variant="outlined"
+                required
+              />
+              <TextField
+                color="secondary"
+                id="outlined-textarea"
+                label="Desination Location"
+                onChange={changeReturnLocation}
+                value={returnLocation}
+                placeholder="Enter Airport"
+                multiline
+                variant="outlined"
+                required
+              />
+              <TextField
+                color="secondary"
+                id="date"
+                label="Departure Date"
+                onChange={changeDepartDate}
+                value={departDate}
+                type="date"
+                className={classes.textField}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                variant="outlined"
+                required
+              />
+              <TextField
+                color="secondary"
+                id="date"
+                label="Return Date"
+                onChange={changeReturnDate}
+                value={returnDate}
+                type="date"
+                className={classes.textField}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                variant="outlined"
+                required
+              />
+              <TextField
+                color="secondary"
+                id="outlined-textarea"
+                label="Travelers"
+                onChange={changeTravelers}
+                value={travelers}
+                placeholder="Travelers"
+                multiline
+                variant="outlined"
+                required
+              />
+              <TextField
+                color="secondary"
+                id="outlined-select-currency-native"
+                select
+                label="Transportation"
+                value={transportation}
+                onChange={changeTransportation}
+                SelectProps={{
+                  native: true,
+                }}
+                variant="outlined"
+              >
+                {transportations.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </TextField>
+              <TextField
+                color="secondary"
+                id="outlined-textarea"
+                label="Price"
+                onChange={changePrice}
+                value={price}
+                placeholder="$"
+                multiline
+                variant="outlined"
+                required
+              />
+            </div>
           </div>
-          <div className="travel-information">
-            <TextField
-              color="secondary"
-              id="outlined-textarea"
-              label="Departure Location"
-              onChange={changeDepartLocation}
-              value={departLocation}
-              placeholder="Enter Airport"
-              multiline
-              variant="outlined"
-              required
-            />
-            <TextField
-              color="secondary"
-              id="outlined-textarea"
-              label="Desination Location"
-              onChange={changeReturnLocation}
-              value={returnLocation}
-              placeholder="Enter Airport"
-              multiline
-              variant="outlined"
-              required
-            />
-            <TextField
-              color="secondary"
-              id="date"
-              label="Departure Date"
-              onChange={changeDepartDate}
-              value={departDate}
-              type="date"
-              className={classes.textField}
-              InputLabelProps={{
-                shrink: true,
-              }}
-              variant="outlined"
-              required
-            />
-            <TextField
-              color="secondary"
-              id="date"
-              label="Return Date"
-              onChange={changeReturnDate}
-              value={returnDate}
-              type="date"
-              className={classes.textField}
-              InputLabelProps={{
-                shrink: true,
-              }}
-              variant="outlined"
-              required
-            />
-            <TextField
-              color="secondary"
-              id="outlined-textarea"
-              label="Travelers"
-              onChange={changeTravelers}
-              value={travelers}
-              placeholder="Travelers"
-              multiline
-              variant="outlined"
-              required
-            />
-            <TextField
-              color="secondary"
-              id="outlined-select-currency-native"
-              select
-              label="Transportation"
-              value={transportation}
-              onChange={changeTransportation}
-              SelectProps={{
-                native: true,
-              }}
-              variant="outlined"
+          <div className="submit-button">
+            <Button
+              onClick={submitQuote}
+              variant="contained"
+              size="large"
+              color="primary"
+              type="submit"
             >
-              {transportations.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </TextField>
-            <TextField
-              color="secondary"
-              id="outlined-textarea"
-              label="Price"
-              onChange={changePrice}
-              value={price}
-              placeholder="$"
-              multiline
-              variant="outlined"
-              required
-            />
+              Submit the quote
+            </Button>
           </div>
-          <Button
-            onClick={submitQuote}
-            variant="contained"
-            size="large"
-            color="primary"
-            type="submit"
-          >
-            Submit the quote
-          </Button>
           <section className="form_validation">{error}</section>
         </form>
       </ThemeProvider>

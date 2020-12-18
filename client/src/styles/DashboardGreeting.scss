@@ -3,11 +3,36 @@
   flex-direction: row;
   border-radius: 15px;
   padding: 1em;
-  width: 87vw;
+  width: 86vw;
   height: 30vh;
   background-image: linear-gradient(to right, #5bbfba, #5f6caf);
+  color: white;
 }
 
 .h3-paragraph-container {
-  margin-top: 60px;
+  margin-top: 10px;
+  width: 50vw;
 }
+
+.image {
+  padding-left: 100px;
+}
+
+.stat-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stat-number {
+  font-size: 60px;
+  color: #f0cf85;
+  font-weight: 800;
+}
+
+// .quotes-created-container {
+//   margin-left: 50px;
+// }
+
+// .pending-orders-container {
+//   margin-left: 50px;
+// }

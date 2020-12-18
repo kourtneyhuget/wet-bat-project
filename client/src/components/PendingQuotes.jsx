@@ -12,13 +12,10 @@ import Paper from "@material-ui/core/Paper";
 import TableFooter from "@material-ui/core/TableFooter";
 import { Button } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
-import "../styles/PendingQuotes.scss";
 
 const useStyles = makeStyles(() => ({
   container: {
-    maxHeight: 500,
-    maxWidth: "90%",
-    borderRadius: 0,
+    maxHeight: 550,
   },
 }));
 
@@ -81,14 +78,23 @@ export function PendingQuotes(props) {
         <TableContainer className={classes.container} component={Paper}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
+              <TableCell
+                align="center"
+                colSpan={11}
+                style={{ color: "#5BBFBA" }}
+              >
+                <span id="title">PENDING QUOTES</span>
+              </TableCell>
               <TableRow>
-                <TableCell>NAME</TableCell>
+                <TableCell style={{ color: "#F0CF85" }}>ID</TableCell>
+                <TableCell style={{ color: "#F0CF85" }}>NAME</TableCell>
                 <TableCell></TableCell>
-                <TableCell>PHONE</TableCell>
-                <TableCell>FROM</TableCell>
-                <TableCell>DEPART</TableCell>
-                <TableCell>RETURN</TableCell>
-                <TableCell>PRICE</TableCell>
+                <TableCell style={{ color: "#F0CF85" }}>PHONE</TableCell>
+                <TableCell style={{ color: "#F0CF85" }}>FROM</TableCell>
+                <TableCell style={{ color: "#F0CF85" }}>TO</TableCell>
+                <TableCell style={{ color: "#F0CF85" }}>DEPART</TableCell>
+                <TableCell style={{ color: "#F0CF85" }}>RETURN</TableCell>
+                <TableCell style={{ color: "#F0CF85" }}>PRICE</TableCell>
                 <TableCell></TableCell>
               </TableRow>
             </TableHead>
@@ -96,11 +102,13 @@ export function PendingQuotes(props) {
               {pending.map((quote, index) => (
                 <TableRow key={quote.id}>
                   <TableCell component="th" scope="row">
-                    {quote.first_name}
+                    {quote.id}
                   </TableCell>
+                  <TableCell>{quote.first_name}</TableCell>
                   <TableCell>{quote.last_name}</TableCell>
                   <TableCell>{quote.phone_number}</TableCell>
                   <TableCell>{quote.departure_location}</TableCell>
+                  <TableCell>{quote.destination_location}</TableCell>
                   <TableCell>{quote.depart_date.slice(0, 10)}</TableCell>
                   <TableCell>{quote.return_date.slice(0, 10)}</TableCell>
                   <TableCell>${quote.price}</TableCell>

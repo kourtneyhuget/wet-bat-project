@@ -5,6 +5,7 @@ import { PendingQuotes } from "./PendingQuotes";
 import { CompletedQuotes } from "./CompletedQuotes";
 import { SideNav } from "./SideNav";
 import { DashboardGreeting } from "./DashboardGreeting";
+import { PotentialRevenue } from "./PotentialRevenue";
 import "../styles/MainPage.scss";
 
 export function MainPage() {
@@ -43,6 +44,9 @@ export function MainPage() {
       </div>
       <div className="greeting-dashboard">
         <DashboardGreeting />
+      </div>
+      <div className="potential-revenue">
+        <PotentialRevenue />
       </div>
     </div>
   );

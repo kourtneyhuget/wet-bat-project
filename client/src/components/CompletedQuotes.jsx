@@ -44,16 +44,14 @@ export function CompletedQuotes(props) {
       <TableContainer className={classes.container} component={Paper}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
+            <TableCell align="center" colSpan={5} style={{ color: "#5BBFBA" }}>
+              <span id="title">CONVERTED QUOTES TO SERVICES</span>
+            </TableCell>
             <TableRow>
-              <TableCell align="center" colSpan={5}>
-                CONVERTED QUOTES TO SERVICES
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell></TableCell>
-              <TableCell>PHONE</TableCell>
-              <TableCell>PRICE</TableCell>
+              <TableCell style={{ color: "#F0CF85" }}>Name</TableCell>
+              <TableCell style={{ color: "#F0CF85" }}></TableCell>
+              <TableCell style={{ color: "#F0CF85" }}>PHONE</TableCell>
+              <TableCell style={{ color: "#F0CF85" }}>PRICE</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -62,7 +60,7 @@ export function CompletedQuotes(props) {
                 <TableCell>{quote.first_name}</TableCell>
                 <TableCell>{quote.last_name}</TableCell>
                 <TableCell>{quote.phone_number}</TableCell>
-                <TableCell>{quote.price}</TableCell>
+                <TableCell>${quote.price}</TableCell>
               </TableRow>
             ))}
           </TableBody>
