@@ -17,24 +17,12 @@ const useStyles = makeStyles(() => ({
   root: {
     width: "40%",
     height: "40%",
-    borderRadius: "15px",
   },
   container: {
     maxHeight: 500,
     maxWidth: "50%",
   },
 }));
-
-// const theme = createMuiTheme({
-//   palette: {
-//     primary: {
-//       main: "#5BBFBA",
-//     },
-//     secondary: {
-//       main: "#5F6CAF",
-//     },
-//   },
-// });
 
 const theme = createMuiTheme({
   palette: {
@@ -91,18 +79,15 @@ export function PendingQuotes() {
     <div className="pending-quote-container">
       <ThemeProvider theme={theme}>
         <TableContainer className={classes.container} component={Paper}>
-          <Table
-            stickyHeader
-            aria-label="sticky table"
-            aria-label="sticky table"
-          >
+          <Table stickyHeader aria-label="sticky table">
             <TableHead className={classes.root}>
               <TableRow>
                 <TableCell>NAME</TableCell>
+                <TableCell></TableCell>
                 <TableCell>PHONE</TableCell>
-                <TableCell>DESTINATION</TableCell>
-                <TableCell>DEPARTURE DATE</TableCell>
-                <TableCell>RETURN DATE</TableCell>
+                <TableCell>FROM</TableCell>
+                <TableCell>DEPART</TableCell>
+                <TableCell>RETURN</TableCell>
                 <TableCell>PRICE</TableCell>
                 <TableCell></TableCell>
               </TableRow>
@@ -113,10 +98,11 @@ export function PendingQuotes() {
                   <TableCell component="th" scope="row">
                     {quote.first_name}
                   </TableCell>
+                  <TableCell>{quote.last_name}</TableCell>
                   <TableCell>{quote.phone_number}</TableCell>
                   <TableCell>{quote.departure_location}</TableCell>
                   <TableCell>{quote.depart_date.slice(0, 10)}</TableCell>
-                  <TableCell>${quote.return_date.slice(0, 10)}</TableCell>
+                  <TableCell>{quote.return_date.slice(0, 10)}</TableCell>
                   <TableCell>${quote.price}</TableCell>
                   <TableCell>
                     <Button
@@ -127,7 +113,7 @@ export function PendingQuotes() {
                       color="primary"
                       type="submit"
                     >
-                      Close
+                      CLOSE
                     </Button>
                   </TableCell>
                 </TableRow>

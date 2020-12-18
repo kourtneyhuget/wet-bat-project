@@ -137,6 +137,7 @@ export function QuickQuote() {
   };
 
   const submitQuote = async (event) => {
+    event.preventDefault();
     if (validate()) {
       axios
         .put("/api/quotes", {
@@ -153,7 +154,7 @@ export function QuickQuote() {
           price: price,
         })
         .then((res) => {
-          console.log("WE MADE IT");
+          g;
         })
         .catch((error) => {
           console.error("Error: ", error);
@@ -307,6 +308,7 @@ export function QuickQuote() {
             variant="contained"
             size="large"
             color="primary"
+            type="submit"
           >
             Submit the quote
           </Button>

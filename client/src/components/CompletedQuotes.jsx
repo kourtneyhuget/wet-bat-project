@@ -1,5 +1,76 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
+
+const useStyles = makeStyles({
+  table: {
+    width: "10%",
+    height: "20%",
+  },
+});
 
 export function CompletedQuotes() {
-  return <></>;
+  const classes = useStyles();
+  const [completed, setCompleted] = useState([]);
+
+  // function subtotal(items) {
+  //   return items.map(({ price }) => price).reduce((sum, i) => sum + i, 0);
+  // }
+
+  // function ccyFormat(num) {
+  //   return `${num.toFixed(2)}`;
+  // }
+
+  // const invoiceSubtotal = subtotal();
+
+  //render all completed quotes
+  const getCompleted = async (event) => {
+    try {
+      const response = await fetch("/api/completed");
+      const jsonData = await response.json();
+      setCompleted(jsonData);
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
+  useEffect(() => {
+    getCompleted();
+  }, []);
+
+  return (
+    <TableContainer component={Paper}>
+      <Table stickyHeader aria-label="sticky table">
+        <TableHead>
+          <TableRow>
+            <TableCell align="center" colSpan={5}>
+              CONVERTED QUOTES TO SERVICES
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Name</TableCell>
+            <TableCell></TableCell>
+            <TableCell>PHONE</TableCell>
+            <TableCell>PRICE</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {completed.map((quote) => (
+            <TableRow key={quote.id}>
+              <TableCell>{quote.first_name}</TableCell>
+              <TableCell>{quote.last_name}</TableCell>
+              <TableCell>{quote.phone_number}</TableCell>
+              <TableCell>{quote.price}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
 }

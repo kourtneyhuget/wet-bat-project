@@ -80,7 +80,7 @@ module.exports = (db) => {
     const queryParams = [selectedId];
     const queryString = `
     UPDATE quotes
-    SET is_converted = true
+    SET is_converted = TRUE
     WHERE client_id = $1
     RETURNING *;
     `;
@@ -92,5 +92,25 @@ module.exports = (db) => {
         console.error(error.message);
       });
   });
+
+  router.get("/completed", async (req, res) => {
+    db.query(
+      `
+    SELECT quotes.*, clients.*
+    FROM quotes
+    INNER JOIN clients 
+    ON clients.id = client_id
+    WHERE quotes.is_converted = TRUE
+    `
+    )
+      .then((data) => {
+        console.log("THIS IS DATA", data);
+        res.json(data.rows);
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  });
+
   return router;
 };
