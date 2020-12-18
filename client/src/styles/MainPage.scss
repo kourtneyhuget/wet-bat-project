@@ -5,7 +5,7 @@
 }
 
 .header {
-  grid-area: 1 / 1 / 1 / 9;
+  grid-area: 1 / 1 / 1 / 10;
 }
 
 .quick-quote {
@@ -13,17 +13,25 @@
 }
 
 .pending-quotes {
-  grid-area: 3 / 3 / 5 / 8;
+  grid-area: 3 / 3 / 5 / 7;
 }
 
 .completed-quotes {
-  grid-area: 5 / 2 / 7 / 5;
+  grid-area: 5 / 2 / 10 / 8;
 }
 
 .side-nav {
-  grid-area: 2 / 1 / 13 / 1;
+  grid-area: 2 / 1 / 9 / 1;
 }
 
 .greeting-dashboard {
   grid-area: 2 / 2 / 2 / 5;
+}
+
+.new-leads {
+  grid-area: 3 / 7 / 7 / 10;
+}
+
+.popular-packages {
+  grid-area: 5 / 3 / 9 / 10;
 }

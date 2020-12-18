@@ -19,8 +19,9 @@ export function DashboardGreeting(props) {
           <div className="new-leads-container">
             <span className="stat-number">101</span>
             <br />
-            <span>NEW</span>
-            <span> LEADS</span>
+            <span>INCOMING</span>
+            <br />
+            <span> NEW LEADS</span>
           </div>
           <div className="quotes-created-container">
             <span className="stat-number"> 35</span>

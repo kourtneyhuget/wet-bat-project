@@ -86,14 +86,14 @@ export function PendingQuotes(props) {
                 <span id="title">PENDING QUOTES</span>
               </TableCell>
               <TableRow>
-                <TableCell style={{ color: "#F0CF85" }}>ID</TableCell>
+                {/* <TableCell style={{ color: "#F0CF85" }}>ID</TableCell> */}
                 <TableCell style={{ color: "#F0CF85" }}>NAME</TableCell>
                 <TableCell></TableCell>
                 <TableCell style={{ color: "#F0CF85" }}>PHONE</TableCell>
-                <TableCell style={{ color: "#F0CF85" }}>FROM</TableCell>
+                {/* <TableCell style={{ color: "#F0CF85" }}>FROM</TableCell> */}
                 <TableCell style={{ color: "#F0CF85" }}>TO</TableCell>
                 <TableCell style={{ color: "#F0CF85" }}>DEPART</TableCell>
-                <TableCell style={{ color: "#F0CF85" }}>RETURN</TableCell>
+                {/* <TableCell style={{ color: "#F0CF85" }}>RETURN</TableCell> */}
                 <TableCell style={{ color: "#F0CF85" }}>PRICE</TableCell>
                 <TableCell></TableCell>
               </TableRow>
@@ -102,15 +102,15 @@ export function PendingQuotes(props) {
               {pending.map((quote, index) => (
                 <TableRow key={quote.id}>
                   <TableCell component="th" scope="row">
-                    {quote.id}
+                    {quote.first_name}
                   </TableCell>
-                  <TableCell>{quote.first_name}</TableCell>
+                  {/* <TableCell>{quote.first_name}</TableCell> */}
                   <TableCell>{quote.last_name}</TableCell>
                   <TableCell>{quote.phone_number}</TableCell>
-                  <TableCell>{quote.departure_location}</TableCell>
+                  {/* <TableCell>{quote.departure_location}</TableCell> */}
                   <TableCell>{quote.destination_location}</TableCell>
                   <TableCell>{quote.depart_date.slice(0, 10)}</TableCell>
-                  <TableCell>{quote.return_date.slice(0, 10)}</TableCell>
+                  {/* <TableCell>{quote.return_date.slice(0, 10)}</TableCell> */}
                   <TableCell>${quote.price}</TableCell>
                   <TableCell>
                     <Button

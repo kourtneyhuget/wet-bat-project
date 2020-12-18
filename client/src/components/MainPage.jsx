@@ -5,7 +5,8 @@ import { PendingQuotes } from "./PendingQuotes";
 import { CompletedQuotes } from "./CompletedQuotes";
 import { SideNav } from "./SideNav";
 import { DashboardGreeting } from "./DashboardGreeting";
-import { PotentialRevenue } from "./PotentialRevenue";
+import { NewLeads } from "./NewLeads";
+import { PopularPackages } from "./PopularPackages";
 import "../styles/MainPage.scss";
 
 export function MainPage() {
@@ -45,8 +46,11 @@ export function MainPage() {
       <div className="greeting-dashboard">
         <DashboardGreeting />
       </div>
-      <div className="potential-revenue">
-        <PotentialRevenue />
+      <div className="new-leads">
+        <NewLeads />
+      </div>
+      <div className="popular-packages">
+        <PopularPackages />
       </div>
     </div>
   );
