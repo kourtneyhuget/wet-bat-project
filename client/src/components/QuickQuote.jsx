@@ -55,7 +55,7 @@ export function QuickQuote(props) {
   const [departDate, setDepartDate] = useState("");
   const [returnDate, setReturnDate] = useState("");
   const [travelers, setTravelers] = useState("");
-  const [transportation, setTransportation] = useState("Transportation");
+  const [transportation, setTransportation] = useState("");
   const [price, setPrice] = useState("");
   const [error, setError] = useState("");
 

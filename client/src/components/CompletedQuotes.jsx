@@ -15,19 +15,9 @@ const useStyles = makeStyles({
   },
 });
 
-export function CompletedQuotes() {
+export function CompletedQuotes(props) {
   const classes = useStyles();
   const [completed, setCompleted] = useState([]);
-
-  // function subtotal(items) {
-  //   return items.map(({ price }) => price).reduce((sum, i) => sum + i, 0);
-  // }
-
-  // function ccyFormat(num) {
-  //   return `${num.toFixed(2)}`;
-  // }
-
-  // const invoiceSubtotal = subtotal();
 
   //render all completed quotes
   const getCompleted = async (event) => {
@@ -42,7 +32,7 @@ export function CompletedQuotes() {
 
   useEffect(() => {
     getCompleted();
-  }, []);
+  }, [props.updateCompleted]);
 
   return (
     <TableContainer component={Paper}>

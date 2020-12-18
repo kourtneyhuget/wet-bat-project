@@ -59,7 +59,7 @@ export function PendingQuotes(props) {
 
   useEffect(() => {
     getPending();
-  }, [props.update]);
+  }, [props.updatePending]);
 
   // close the pending quote
   const moveTask = async (quoteId) => {
@@ -69,6 +69,7 @@ export function PendingQuotes(props) {
       })
       .then((res) => {
         console.log("MADE IT TO THE BACKEND");
+        props.updateCompletedQuotes();
         setPending(pending.filter((quote) => quote.id !== quoteId));
       })
       .catch((error) => {
