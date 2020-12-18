@@ -41,7 +41,7 @@ export function DashboardGreeting(props) {
       </div>
       <img
         className="image"
-        src="http://assets.stickpng.com/thumbs/580b585b2edbce24c47b2d14.png"
+        src="https://assets.stickpng.com/thumbs/580b585b2edbce24c47b2d14.png"
         alt="people"
       />
     </div>
