@@ -44,7 +44,7 @@ const theme = createMuiTheme({
   },
 });
 
-export function QuickQuote() {
+export function QuickQuote(props) {
   const classes = useStyles();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -154,7 +154,19 @@ export function QuickQuote() {
           price: price,
         })
         .then((res) => {
-          g;
+          props.updatePending();
+          setFirstName("");
+          setLastName("");
+          setEmail("");
+          setPhoneNumber("");
+          setDepartLocation("");
+          setReturnLocation("");
+          setDepartDate("");
+          setReturnDate("");
+          setTravelers("");
+          setTransportation("");
+          setPrice("");
+          setError("");
         })
         .catch((error) => {
           console.error("Error: ", error);

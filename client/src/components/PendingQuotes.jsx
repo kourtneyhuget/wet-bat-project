@@ -35,12 +35,13 @@ const theme = createMuiTheme({
   },
 });
 
-export function PendingQuotes() {
+export function PendingQuotes(props) {
   const classes = useStyles();
   // const [open, setOpen] = useState(false);
-  const [pending, setPending] = useState([]);
   const [selectedId, setSelectedId] = useState([]);
+  const [pending, setPending] = useState([]);
 
+  console.log("THIS IS PENDING", pending);
   const handleChange = (event) => {
     setSelectedId(event.target.value);
   };
@@ -58,7 +59,7 @@ export function PendingQuotes() {
 
   useEffect(() => {
     getPending();
-  }, []);
+  }, [props.update]);
 
   // close the pending quote
   const moveTask = async (quoteId) => {
