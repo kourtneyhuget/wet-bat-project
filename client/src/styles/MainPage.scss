@@ -1,0 +1,29 @@
+.main-page-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+
+.header {
+  grid-area: 1 / 1 / 1 / 9;
+}
+
+.quick-quote {
+  grid-area: 3 / 2 / 3 / 2;
+}
+
+.pending-quotes {
+  grid-area: 3 / 3 / 5 / 8;
+}
+
+.completed-quotes {
+  grid-area: 5 / 2 / 7 / 5;
+}
+
+.side-nav {
+  grid-area: 2 / 1 / 5 / 1;
+}
+
+.greeting-dashboard {
+  grid-area: 2 / 2 / 2 / 5;
+}

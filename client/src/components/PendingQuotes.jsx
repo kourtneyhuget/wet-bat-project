@@ -12,15 +12,13 @@ import Paper from "@material-ui/core/Paper";
 import TableFooter from "@material-ui/core/TableFooter";
 import { Button } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
+import "../styles/PendingQuotes.scss";
 
 const useStyles = makeStyles(() => ({
-  root: {
-    width: "40%",
-    height: "40%",
-  },
   container: {
     maxHeight: 500,
-    maxWidth: "50%",
+    maxWidth: "90%",
+    borderRadius: 0,
   },
 }));
 
@@ -82,7 +80,7 @@ export function PendingQuotes(props) {
       <ThemeProvider theme={theme}>
         <TableContainer className={classes.container} component={Paper}>
           <Table stickyHeader aria-label="sticky table">
-            <TableHead className={classes.root}>
+            <TableHead>
               <TableRow>
                 <TableCell>NAME</TableCell>
                 <TableCell></TableCell>
@@ -123,9 +121,9 @@ export function PendingQuotes(props) {
             </TableBody>
             <TableFooter>
               <TableRow>
-                <TableCell align="center"></TableCell>
-                <TableCell align="center" className="icons-style"></TableCell>
-                <TableCell align="center"></TableCell>
+                <TableCell></TableCell>
+                <TableCell className="icons-style"></TableCell>
+                <TableCell></TableCell>
               </TableRow>
             </TableFooter>
           </Table>

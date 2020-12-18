@@ -3,6 +3,9 @@ import Header from "./Header";
 import { QuickQuote } from "./QuickQuote";
 import { PendingQuotes } from "./PendingQuotes";
 import { CompletedQuotes } from "./CompletedQuotes";
+import { SideNav } from "./SideNav";
+import { DashboardGreeting } from "./DashboardGreeting";
+import "../styles/MainPage.scss";
 
 export function MainPage() {
   const [updatePending, setUpdatePending] = useState(true);
@@ -20,13 +23,28 @@ export function MainPage() {
 
   return (
     <div className="main-page-container">
-      <Header />
-      <QuickQuote updatePending={updatePendingQuotes} />
-      <PendingQuotes
-        updatePending={updatePending}
-        updateCompletedQuotes={updateCompletedQuotes}
-      />
-      <CompletedQuotes updateCompleted={updateCompleted} />
+      <div className="header">
+        <Header />
+      </div>
+      <div className="quick-quote">
+        <QuickQuote updatePending={updatePendingQuotes} />
+      </div>
+      <div className="pending-quotes">
+        <PendingQuotes
+          updatePending={updatePending}
+          updateCompleted
+          Quotes={updateCompletedQuotes}
+        />
+      </div>
+      <div className="completed-quotes">
+        <CompletedQuotes updateCompleted={updateCompleted} />
+      </div>
+      <div className="side-nav">
+        <SideNav />
+      </div>
+      <div className="greeting-dashboard">
+        <DashboardGreeting />
+      </div>
     </div>
   );
 }
