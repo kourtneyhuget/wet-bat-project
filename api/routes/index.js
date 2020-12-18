@@ -63,7 +63,7 @@ module.exports = (db) => {
     FROM quotes
     INNER JOIN clients 
     ON clients.id = client_id
-    WHERE quotes.is_converted = FALSE
+    WHERE quotes.is_converted = FALSE;
     `
     )
       .then((data) => {
@@ -100,7 +100,7 @@ module.exports = (db) => {
     FROM quotes
     INNER JOIN clients 
     ON clients.id = client_id
-    WHERE quotes.is_converted = TRUE
+    WHERE quotes.is_converted = TRUE;
     `
     )
       .then((data) => {

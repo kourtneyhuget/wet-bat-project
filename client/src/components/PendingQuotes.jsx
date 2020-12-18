@@ -67,8 +67,8 @@ export function PendingQuotes(props) {
       })
       .then((res) => {
         console.log("MADE IT TO THE BACKEND");
-        props.updateCompletedQuotes();
         setPending(pending.filter((quote) => quote.id !== quoteId));
+        props.updateCompletedQuotes();
       })
       .catch((error) => {
         console.error("Error: ", error);

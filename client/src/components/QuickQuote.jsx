@@ -154,7 +154,7 @@ export function QuickQuote(props) {
           price: price,
         })
         .then((res) => {
-          props.updatePending();
+          props.updatePendingQuotes();
           setFirstName("");
           setLastName("");
           setEmail("");

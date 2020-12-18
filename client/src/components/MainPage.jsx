@@ -27,13 +27,12 @@ export function MainPage() {
         <Header />
       </div>
       <div className="quick-quote">
-        <QuickQuote updatePending={updatePendingQuotes} />
+        <QuickQuote updatePendingQuotes={updatePendingQuotes} />
       </div>
       <div className="pending-quotes">
         <PendingQuotes
           updatePending={updatePending}
-          updateCompleted
-          Quotes={updateCompletedQuotes}
+          updateCompletedQuotes={updateCompletedQuotes}
         />
       </div>
       <div className="completed-quotes">

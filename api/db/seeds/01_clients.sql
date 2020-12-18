@@ -13,7 +13,10 @@ VALUES
 ('Matthew', 'Williams', 'matt@will.com', 1287869486),
 ('Jenna', 'Dems', 'jen@dems.com', 1296869486),
 ('Peter', 'Chuck', 'pete@chuck.com', 1254869486),
-('Koltan', 'Hug', 'koltan@hug.com', 1298869486)
+('Koltan', 'Hug', 'koltan@hug.com', 1298869486),
+('Harry', 'Potter', 'harry@potter.com', 1296869486),
+('Draco', 'Malfoy', 'draco@mal.com', 1254869486),
+('Dobby', 'Elf', 'dobby@elf.com', 1298869486)
 
 
 
