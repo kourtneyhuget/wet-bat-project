@@ -19,7 +19,9 @@ VALUES
 ('Dobby', 'Elf', 'dobby@elf.com', 1298869486),
 ('Leslie', 'Potter', 'lesie@potter.com', 1297869486),
 ('Mario', 'Malxoy', 'mar@mal.com', 1254866486),
-('Irene', 'Ron', 'irene@ron.com', 1298969486)
+('Irene', 'Ron', 'irene@ron.com', 1298969486),
+('Lenard', 'Louis', 'lenny@lou.com', 1298659486),
+('Roxy', 'Bernard', 'roxy@bernard.com', 1298659486)
 
 
 
