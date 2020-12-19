@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -8,6 +8,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import "../styles/CompletedQuotes.scss";
+import { createMuiTheme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   table: {
@@ -15,8 +16,23 @@ const useStyles = makeStyles({
     height: "20%",
   },
   container: {
-    maxHeight: 500,
+    maxHeight: 550,
     maxWidth: "80%",
+  },
+});
+
+//custom brand colors
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#5BBFBA",
+    },
+    secondary: {
+      main: "#5F6CAF",
+    },
+    text: {
+      primary: "#A9A9A9",
+    },
   },
 });
 
@@ -55,14 +71,16 @@ export function CompletedQuotes(props) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {completed.map((quote) => (
-              <TableRow key={quote.id}>
-                <TableCell>{quote.first_name}</TableCell>
-                <TableCell>{quote.last_name}</TableCell>
-                <TableCell>{quote.phone_number}</TableCell>
-                <TableCell>${quote.price}</TableCell>
-              </TableRow>
-            ))}
+            <ThemeProvider theme={theme}>
+              {completed.map((quote) => (
+                <TableRow key={quote.id}>
+                  <TableCell>{quote.first_name}</TableCell>
+                  <TableCell>{quote.last_name}</TableCell>
+                  <TableCell>{quote.phone_number}</TableCell>
+                  <TableCell>${quote.price}</TableCell>
+                </TableRow>
+              ))}
+            </ThemeProvider>
           </TableBody>
         </Table>
       </TableContainer>

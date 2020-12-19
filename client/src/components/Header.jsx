@@ -16,6 +16,7 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import "../styles/Header.scss";
 import { createMuiTheme } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -92,7 +93,7 @@ const theme = createMuiTheme({
   },
 });
 
-export default function Header() {
+export function Header() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -189,7 +190,9 @@ export default function Header() {
               <MenuIcon />
             </IconButton>
             <Typography className={classes.title} variant="h6" noWrap>
-              Wet Bat Travel
+              <Link to="/" className="wet-bat-travel-link">
+                Wet Bat Travel
+              </Link>
             </Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>

@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function NewLeads(props) {
+export function TeamChat(props) {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
@@ -45,7 +45,7 @@ export function NewLeads(props) {
         <Table>
           <TableHead>
             <TableCell align="center" colSpan={5} style={{ color: "#5BBFBA" }}>
-              <span id="title">NEW LEADS</span>
+              <span id="title">TEAM CHAT</span>
             </TableCell>
           </TableHead>
         </Table>
@@ -53,8 +53,8 @@ export function NewLeads(props) {
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar
-                alt="Remy Sharp"
-                src="/static/images/avatar/1.jpg"
+                alt="profile picture"
+                src="https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                 style={{ color: "#A4D4AE" }}
               />
             </ListItemAvatar>
@@ -67,10 +67,10 @@ export function NewLeads(props) {
                     className={classes.inline}
                     color="textPrimary"
                   >
-                    Ali Connors
+                    Mike Smith
                     <br />
                   </Typography>
-                  {"- Hey! Please call me at 4538695849"}
+                  {"- We need to chat about the projected sales this month"}
                 </React.Fragment>
               }
             />
@@ -79,8 +79,8 @@ export function NewLeads(props) {
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar
-                alt="Travis Howard"
-                src="/static/images/avatar/2.jpg"
+                alt="profile picture"
+                src="https://images.pexels.com/photos/1542085/pexels-photo-1542085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                 style={{ color: "#F0CF85" }}
               />
             </ListItemAvatar>
@@ -96,7 +96,7 @@ export function NewLeads(props) {
                     Jennifer Allen
                     <br />
                   </Typography>
-                  {"- Hey! I am interested in a package."}
+                  {"- Hey! Want to grab lunch?"}
                 </React.Fragment>
               }
             />
@@ -105,8 +105,8 @@ export function NewLeads(props) {
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar
-                alt="Cindy Baker"
-                src="/static/images/avatar/3.jpg"
+                alt="profile picture"
+                src="https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                 style={{ color: "#E7F0C3" }}
               />
             </ListItemAvatar>
@@ -122,7 +122,7 @@ export function NewLeads(props) {
                     Sandra Adams
                     <br />
                   </Typography>
-                  {"- Hey! How much is it to fly to YYC now?"}
+                  {"- I can't wait for the holidays..."}
                 </React.Fragment>
               }
             />
@@ -131,8 +131,8 @@ export function NewLeads(props) {
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar
-                alt="Cindy Baker"
-                src="/static/images/avatar/3.jpg"
+                alt="profile picture"
+                src="https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                 style={{ color: "#5F6CAF" }}
               />
             </ListItemAvatar>
@@ -145,10 +145,10 @@ export function NewLeads(props) {
                     className={classes.inline}
                     color="textPrimary"
                   >
-                    Sarah Wells
+                    Morgan Steel
                     <br />
                   </Typography>
-                  {"- Hey! I want to play my package."}
+                  {"- Can I get you to check over the pitch?"}
                 </React.Fragment>
               }
             />
@@ -157,8 +157,8 @@ export function NewLeads(props) {
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar
-                alt="Cindy Baker"
-                src="/static/images/avatar/3.jpg"
+                alt="profile picture"
+                src="https://images.pexels.com/photos/428364/pexels-photo-428364.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                 style={{ color: "#5BBFBA" }}
               />
             </ListItemAvatar>
@@ -171,10 +171,10 @@ export function NewLeads(props) {
                     className={classes.inline}
                     color="textPrimary"
                   >
-                    Lori Adams
+                    Nick Joseph
                     <br />
                   </Typography>
-                  {"- Hey! I am interested in booking a package."}
+                  {"- Do you have time to chat today?"}
                 </React.Fragment>
               }
             />
@@ -183,9 +183,9 @@ export function NewLeads(props) {
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar
-                alt="Cindy Baker"
-                src="/static/images/avatar/3.jpg"
-                style={{ color: "#F0CF85" }}
+                alt="profile picture"
+                src="https://images.pexels.com/photos/1674752/pexels-photo-1674752.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                style={{ color: "#5BBFBA" }}
               />
             </ListItemAvatar>
             <ListItemText
@@ -197,10 +197,10 @@ export function NewLeads(props) {
                     className={classes.inline}
                     color="textPrimary"
                   >
-                    Mike Baker
+                    Lori Baker
                     <br />
                   </Typography>
-                  {"- Hey! I want to play my package."}
+                  {"- Impromptu meeting at 4 today!"}
                 </React.Fragment>
               }
             />
@@ -209,8 +209,8 @@ export function NewLeads(props) {
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
               <Avatar
-                alt="Cindy Baker"
-                src="/static/images/avatar/3.jpg"
+                alt="profile picture"
+                src="https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                 style={{ color: "#A4D4AE" }}
               />
             </ListItemAvatar>
@@ -226,7 +226,7 @@ export function NewLeads(props) {
                     Henry Williams
                     <br />
                   </Typography>
-                  {"- Hey! I was hoping to chat and work out a package price."}
+                  {"- We get a company wide half day Friday!!!"}
                 </React.Fragment>
               }
             />

@@ -15,35 +15,36 @@ export function DashboardGreeting(props) {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <div className="stat-container">
-          <div className="new-leads-container">
-            <span className="stat-number">101</span>
-            <br />
-            <span>INCOMING</span>
-            <br />
-            <span> NEW LEADS</span>
-          </div>
-          <div className="quotes-created-container">
-            <span className="stat-number"> 35</span>
-            <br />
-            <span>QUOTES</span>
-            <br />
-            <span>CREATED</span>
-          </div>
-          <div className="pending-orders-container">
-            <span className="stat-number"> 40</span>
-            <br />
-            <span>PENDING</span>
-            <br />
-            <span>ORDER</span>
-          </div>
+      </div>
+      <div className="stat-container">
+        <div className="new-leads-container">
+          <span className="stat-number">101</span>
+          <br />
+          <span>INCOMING</span>
+          <br />
+          <span> NEW LEADS</span>
+        </div>
+        <div className="quotes-created-container">
+          <span className="stat-number"> 35</span>
+          <br />
+          <span>QUOTES</span>
+          <br />
+          <span>CREATED</span>
+        </div>
+        <div className="pending-orders-container">
+          <span className="stat-number"> 40</span>
+          <br />
+          <span>PENDING</span>
+          <br />
+          <span>ORDERS</span>
+        </div>
+        <div className="dashboard-image">
+          <img
+            src="https://www.qminder.com/resources/img/product-pages/hero-images/customer-service-dashboard.svg"
+            alt="dashboard"
+          />
         </div>
       </div>
-      <img
-        className="image"
-        src="https://assets.stickpng.com/thumbs/580b585b2edbce24c47b2d14.png"
-        alt="people"
-      />
     </div>
   );
 }

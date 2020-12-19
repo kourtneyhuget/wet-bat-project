@@ -16,6 +16,8 @@ import TimelineIcon from "@material-ui/icons/Timeline";
 import PeopleIcon from "@material-ui/icons/People";
 import BusinessCenterIcon from "@material-ui/icons/BusinessCenter";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
+import { Link } from "react-router-dom";
+import "../styles/SideNav.scss";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,13 +43,17 @@ export function SideNav() {
           <ListItemIcon>
             <HomeIcon style={{ color: "#5F6CAF" }} />
           </ListItemIcon>
-          <ListItemText primary="Home" />
+          <Link to="/" className="side-nav-links">
+            <ListItemText primary="Home" />
+          </Link>
         </ListItem>
         <ListItem button>
           <ListItemIcon>
             <AttachMoneyIcon style={{ color: "#5F6CAF" }} />
           </ListItemIcon>
-          <ListItemText primary="Quotes" />
+          <Link to="/detailedquotes" className="side-nav-links">
+            <ListItemText primary="Quotes" />
+          </Link>
         </ListItem>
         <ListItem button>
           <ListItemIcon>

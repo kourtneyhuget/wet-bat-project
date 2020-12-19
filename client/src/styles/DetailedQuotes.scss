@@ -1,0 +1,17 @@
+.detailed-quote-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+
+.header-container {
+  grid-area: 1 / 1 / 1 / 12;
+}
+
+.side-nav-container {
+  grid-area: 2 / 1 / 12 / 1;
+}
+
+.detailed-quote-table {
+  grid-area: 2 / 2 / 12 / 12;
+}

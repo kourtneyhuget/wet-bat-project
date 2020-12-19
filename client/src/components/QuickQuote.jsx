@@ -46,9 +46,6 @@ const theme = createMuiTheme({
     secondary: {
       main: "#5F6CAF",
     },
-    text: {
-      primary: "#FFFFFF",
-    },
   },
 });
 
@@ -210,7 +207,6 @@ export function QuickQuote(props) {
                 placeholder="First Name"
                 multiline
                 variant="outlined"
-                required
               />
               <TextField
                 color="secondary"

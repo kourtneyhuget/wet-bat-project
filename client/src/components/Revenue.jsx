@@ -8,8 +8,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import { TableBody } from "@material-ui/core";
-import "../styles/PopularPackages.scss";
-import MaximizeIcon from "@material-ui/icons/Maximize";
+import "../styles/RevenueTables.scss";
 
 // custom brand colours
 const theme = createMuiTheme({
@@ -28,9 +27,8 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // width: "100%",
-    // maxWidth: "36ch",
-    maxHeight: 550,
+    width: "100%",
+    height: 290,
     backgroundColor: theme.palette.background.paper,
   },
   inline: {
@@ -38,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function PopularPackages(props) {
+export function Revenue() {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
@@ -46,28 +44,15 @@ export function PopularPackages(props) {
         <Table>
           <TableHead>
             <TableCell align="center" colSpan={5} style={{ color: "#5BBFBA" }}>
-              <span id="title">POPULAR PACKAGES</span>
+              <span id="title">REVENUE</span>
             </TableCell>
           </TableHead>
           <TableBody>
-            <div className="poplar-package-container">
-              <div className="package-text">
-                <p>Lorem ipsum dolor sit </p>
-                <br />
-                <p>Lorem ipsum dolor sit</p>
-                <br />
-                <p>Lorem ipsum dolor sit</p>
-                <br />
-                <p>Lorem ipsum dolor sit</p>
-                <br />
-                <p>Lorem ipsum dolor sit</p>
-              </div>
-              <img
-                className="world-map"
-                src="http://assets.stickpng.com/thumbs/5a02c5a318e87004f1ca43be.png"
-                alt="world map"
-              />
-            </div>
+            <img
+              className="graph-image"
+              src="https://images.vexels.com/media/users/3/131136/isolated/preview/4c711c7ec7a01da4a8adf53684a13209-increasing-multicolor-line-chart-by-vexels.png"
+              alt="graph chart"
+            />
           </TableBody>
         </Table>
       </TableContainer>

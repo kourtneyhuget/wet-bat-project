@@ -13,6 +13,8 @@ import TableFooter from "@material-ui/core/TableFooter";
 import { Button } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
 import OpenWithIcon from "@material-ui/icons/OpenWith";
+import "../styles/PendingQuotes.scss";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -27,6 +29,12 @@ const theme = createMuiTheme({
     },
     secondary: {
       main: "#5F6CAF",
+    },
+    text: {
+      primary: "#A9A9A9",
+    },
+    spacing: {
+      ml: 8,
     },
   },
 });
@@ -79,22 +87,22 @@ export function PendingQuotes(props) {
         <TableContainer className={classes.container} component={Paper}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
-              <TableCell
-                align="center"
-                colSpan={11}
-                style={{ color: "#5BBFBA" }}
-              >
-                <span id="title">PENDING QUOTES</span>
+              <TableCell colSpan={11} style={{ color: "#5BBFBA" }}>
+                <div className="title-icon">
+                  <span>PENDING QUOTES</span>
+                  <span id="icon">
+                    <Link to="/detailedquotes" className="icon-link">
+                      <OpenWithIcon />
+                    </Link>
+                  </span>
+                </div>
               </TableCell>
               <TableRow>
-                {/* <TableCell style={{ color: "#F0CF85" }}>ID</TableCell> */}
                 <TableCell style={{ color: "#F0CF85" }}>NAME</TableCell>
                 <TableCell></TableCell>
                 <TableCell style={{ color: "#F0CF85" }}>PHONE</TableCell>
-                {/* <TableCell style={{ color: "#F0CF85" }}>FROM</TableCell> */}
                 <TableCell style={{ color: "#F0CF85" }}>TO</TableCell>
                 <TableCell style={{ color: "#F0CF85" }}>DEPART</TableCell>
-                {/* <TableCell style={{ color: "#F0CF85" }}>RETURN</TableCell> */}
                 <TableCell style={{ color: "#F0CF85" }}>PRICE</TableCell>
                 <TableCell></TableCell>
               </TableRow>
@@ -105,13 +113,10 @@ export function PendingQuotes(props) {
                   <TableCell component="th" scope="row">
                     {quote.first_name}
                   </TableCell>
-                  {/* <TableCell>{quote.first_name}</TableCell> */}
                   <TableCell>{quote.last_name}</TableCell>
                   <TableCell>{quote.phone_number}</TableCell>
-                  {/* <TableCell>{quote.departure_location}</TableCell> */}
                   <TableCell>{quote.destination_location}</TableCell>
                   <TableCell>{quote.depart_date.slice(0, 10)}</TableCell>
-                  {/* <TableCell>{quote.return_date.slice(0, 10)}</TableCell> */}
                   <TableCell>${quote.price}</TableCell>
                   <TableCell>
                     <Button

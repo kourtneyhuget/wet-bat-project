@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "./Header";
+import { Header } from "./Header";
 import { QuickQuote } from "./QuickQuote";
 import { PendingQuotes } from "./PendingQuotes";
 import { CompletedQuotes } from "./CompletedQuotes";
@@ -8,6 +8,9 @@ import { DashboardGreeting } from "./DashboardGreeting";
 import { NewLeads } from "./NewLeads";
 import { PopularPackages } from "./PopularPackages";
 import "../styles/MainPage.scss";
+import { PotentialRevenue } from "./PotentialRevenue";
+import { Revenue } from "./Revenue";
+import { TeamChat } from "./TeamChat";
 
 export function MainPage() {
   const [updatePending, setUpdatePending] = useState(true);
@@ -49,8 +52,17 @@ export function MainPage() {
       <div className="new-leads">
         <NewLeads />
       </div>
-      <div className="popular-packages">
+      {/* <div className="popular-packages">
         <PopularPackages />
+      </div> */}
+      <div className="potential-revenue">
+        <PotentialRevenue />
+      </div>
+      <div className="revenue">
+        <Revenue />
+      </div>
+      <div className="team-chat">
+        <TeamChat />
       </div>
     </div>
   );
