@@ -91,7 +91,7 @@ export function DetailedQuotes(props) {
               <TableHead>
                 <TableCell
                   align="center"
-                  colSpan={12}
+                  colSpan={13}
                   style={{ color: "#5BBFBA" }}
                 >
                   <span id="title">PENDING QUOTES</span>
@@ -101,6 +101,7 @@ export function DetailedQuotes(props) {
                   <TableCell style={{ color: "#F0CF85" }}>NAME</TableCell>
                   <TableCell></TableCell>
                   <TableCell style={{ color: "#F0CF85" }}>PHONE</TableCell>
+                  <TableCell style={{ color: "#F0CF85" }}>EMAIL</TableCell>
                   <TableCell style={{ color: "#F0CF85" }}>FROM</TableCell>
                   <TableCell style={{ color: "#F0CF85" }}>TO</TableCell>
                   <TableCell style={{ color: "#F0CF85" }}>DEPART</TableCell>
@@ -122,6 +123,7 @@ export function DetailedQuotes(props) {
                     <TableCell>{quote.first_name}</TableCell>
                     <TableCell>{quote.last_name}</TableCell>
                     <TableCell>{quote.phone_number}</TableCell>
+                    <TableCell>{quote.email}</TableCell>
                     <TableCell>{quote.departure_location}</TableCell>
                     <TableCell>{quote.destination_location}</TableCell>
                     <TableCell>{quote.depart_date.slice(0, 10)}</TableCell>
