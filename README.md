@@ -6,6 +6,8 @@ This app was created as a solution for part of Wet Bat's FY2020 strategic action
 
 ## FINAL PRODUCT
 
+![demo of quick quote](<https://github.com/kourtneyhuget/wet-bat-project/blob/main/docs/Animated%20GIF-downsized_large%20(3).gif?raw=true>)
+
 ## RUNNING PROJECT ON LOCAL MACHINE
 
 From the repo:
