@@ -7,6 +7,7 @@ This app was created as a solution for part of Wet Bat's FY2020 strategic action
 ## FINAL PRODUCT
 
 [Video of user going through Wet Bat Dashboard](https://drive.google.com/file/d/1Jr_54ZAOoHcjue7ot14qaYyjkuFIIP3J/view?usp=sharing)
+![Main Page Screenshot](https://github.com/kourtneyhuget/wet-bat-project/blob/main/docs/MainPageScreenshot.png?raw=true)
 
 ## RUNNING PROJECT ON LOCAL MACHINE
 
