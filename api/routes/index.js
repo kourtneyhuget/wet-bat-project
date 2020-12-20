@@ -99,7 +99,6 @@ module.exports = (db) => {
     `
     )
       .then((data) => {
-        console.log("THIS IS DATA", data);
         res.json(data.rows);
       })
       .catch((error) => {
