@@ -1,4 +1,3 @@
-import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
@@ -16,12 +15,14 @@ import OpenWithIcon from "@material-ui/icons/OpenWith";
 import "../styles/PendingQuotes.scss";
 import { Link } from "react-router-dom";
 
+// material ui - table styling
 const useStyles = makeStyles(() => ({
   container: {
     maxHeight: 550,
   },
 }));
 
+// custom brand colors
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -33,19 +34,14 @@ const theme = createMuiTheme({
     text: {
       primary: "#A9A9A9",
     },
-    spacing: {
-      ml: 8,
-    },
   },
 });
 
 export function PendingQuotes(props) {
   const classes = useStyles();
-  // const [open, setOpen] = useState(false);
   const [selectedId, setSelectedId] = useState([]);
   const [pending, setPending] = useState([]);
 
-  console.log("THIS IS PENDING", pending);
   const handleChange = (event) => {
     setSelectedId(event.target.value);
   };
@@ -65,14 +61,13 @@ export function PendingQuotes(props) {
     getPending();
   }, [props.updatePending]);
 
-  // close the pending quote
+  // update pending quotes from is_converted false to true when "close" button is clicked
   const moveTask = async (quoteId) => {
     axios
       .put(`api/quotescompleted/${quoteId}`, {
         selectedId: quoteId,
       })
       .then((res) => {
-        console.log("MADE IT TO THE BACKEND");
         setPending(pending.filter((quote) => quote.id !== quoteId));
         props.updateCompletedQuotes();
       })

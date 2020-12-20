@@ -28,6 +28,7 @@ const transportations = [
   },
 ];
 
+// material ui - table styling
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
@@ -51,6 +52,8 @@ const theme = createMuiTheme({
 
 export function QuickQuote(props) {
   const classes = useStyles();
+
+  // set state for all input text fields
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -108,6 +111,7 @@ export function QuickQuote(props) {
     setPrice(event.target.value);
   };
 
+  // function to validate that user has entered all required fields on form
   const validate = () => {
     if (firstName === "") {
       setError("First name cannot be blank");
@@ -141,6 +145,7 @@ export function QuickQuote(props) {
     return true;
   };
 
+  // posts quick quote form input to database
   const submitQuote = async (event) => {
     event.preventDefault();
     if (validate()) {

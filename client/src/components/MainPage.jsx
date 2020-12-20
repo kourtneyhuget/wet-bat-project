@@ -6,7 +6,6 @@ import { CompletedQuotes } from "./CompletedQuotes";
 import { SideNav } from "./SideNav";
 import { DashboardGreeting } from "./DashboardGreeting";
 import { NewLeads } from "./NewLeads";
-import { PopularPackages } from "./PopularPackages";
 import "../styles/MainPage.scss";
 import { PotentialRevenue } from "./PotentialRevenue";
 import { Revenue } from "./Revenue";
@@ -16,12 +15,12 @@ export function MainPage() {
   const [updatePending, setUpdatePending] = useState(true);
   const [updateCompleted, setUpdateCompleted] = useState(true);
 
-  //pass in to quick quote as prop
+  //pass in to quick quotes as prop to change state as false to reload component without refresh
   const updatePendingQuotes = () => {
     setUpdatePending(!updatePending);
   };
 
-  //pass in to completed quote
+  //pass in to pending quotes as prop to change state to false to reload component without refresh
   const updateCompletedQuotes = () => {
     setUpdateCompleted(!updateCompleted);
   };
@@ -52,9 +51,6 @@ export function MainPage() {
       <div className="new-leads">
         <NewLeads />
       </div>
-      {/* <div className="popular-packages">
-        <PopularPackages />
-      </div> */}
       <div className="potential-revenue">
         <PotentialRevenue />
       </div>

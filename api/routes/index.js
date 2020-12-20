@@ -3,15 +3,10 @@ const express = require("express");
 const router = express.Router();
 
 module.exports = (db) => {
-  // router.get("/test", (req, res) => {
-  //   db.query("SELECT * FROM clients;").then((data) => {
-  //     console.log("SENDING DATA BACK TO FRONT END", data);
-  //     res.json(data.rows[0]);
-  //   });
-  // });
-
+  // posts quick quote form input
+  // first posts client information to create a user and generate a client id
+  // if that resolves it puts traveling information with corresponding client_id that was generated
   router.put("/quotes", async (req, res) => {
-    console.log("IN BACK END QUOTES");
     const { firstName, lastName, email, phoneNumber } = req.body;
     const queryParams = [firstName, lastName, email, phoneNumber];
     const queryString = `
@@ -22,8 +17,6 @@ module.exports = (db) => {
     db.query(queryString, queryParams)
       .then((data) => {
         const clientId = data.rows[0].id;
-        // console.log("res", res);
-        // console.log("HERE IT IS", res.rows[0].id);
         const {
           departLocation,
           returnLocation,
@@ -56,6 +49,7 @@ module.exports = (db) => {
       });
   });
 
+  // gets all pending quotes
   router.get("/pending", async (req, res) => {
     db.query(
       `
@@ -67,7 +61,6 @@ module.exports = (db) => {
     `
     )
       .then((data) => {
-        console.log("THIS IS DATA", data);
         res.json(data.rows);
       })
       .catch((error) => {
@@ -75,6 +68,7 @@ module.exports = (db) => {
       });
   });
 
+  // updates pending quotes to completed quotes
   router.put("/quotescompleted/:id", async (req, res) => {
     const { selectedId } = req.body;
     const queryParams = [selectedId];
@@ -93,6 +87,7 @@ module.exports = (db) => {
       });
   });
 
+  // gets all completed quotes
   router.get("/completed", async (req, res) => {
     db.query(
       `

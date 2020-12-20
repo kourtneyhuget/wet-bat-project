@@ -5,8 +5,6 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
-import InboxIcon from "@material-ui/icons/Inbox";
-import DraftsIcon from "@material-ui/icons/Drafts";
 import HomeIcon from "@material-ui/icons/Home";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import BlurLinearIcon from "@material-ui/icons/BlurLinear";
@@ -19,19 +17,14 @@ import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import { Link } from "react-router-dom";
 import "../styles/SideNav.scss";
 
+// material ui - side nav customization
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "lightgrey",
     color: "#5F6CAF",
     height: "100%",
-    // maxWidth: 360,
-    // backgroundColor: theme.palette.background.paper,
   },
 }));
-
-// function ListItemLink(props) {
-//   return <ListItem button component="a" {...props} />;
-// }
 
 export function SideNav() {
   const classes = useStyles();

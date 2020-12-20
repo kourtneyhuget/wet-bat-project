@@ -14,6 +14,7 @@ import TableHead from "@material-ui/core/TableHead";
 import { createMuiTheme } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 
+// custom brand colors
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -25,10 +26,9 @@ const theme = createMuiTheme({
   },
 });
 
+// material ui - table styling
 const useStyles = makeStyles((theme) => ({
   root: {
-    // width: "100%",
-    // maxWidth: "36ch",
     maxHeight: 500,
     backgroundColor: theme.palette.background.paper,
   },

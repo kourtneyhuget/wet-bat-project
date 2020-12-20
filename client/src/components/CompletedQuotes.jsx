@@ -10,6 +10,7 @@ import Paper from "@material-ui/core/Paper";
 import "../styles/CompletedQuotes.scss";
 import { createMuiTheme } from "@material-ui/core/styles";
 
+// material ui - table styling
 const useStyles = makeStyles({
   table: {
     width: "10%",

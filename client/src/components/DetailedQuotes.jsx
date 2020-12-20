@@ -15,6 +15,7 @@ import { SideNav } from "./SideNav";
 import { Header } from "./Header";
 import "../styles/DetailedQuotes.scss";
 
+// material ui - table styling
 const useStyles = makeStyles(() => ({
   container: {
     maxHeight: 840,
@@ -45,6 +46,7 @@ export function DetailedQuotes(props) {
     setSelectedId(event.target.value);
   };
 
+  // get all pending quotes
   const getPending = async (event) => {
     try {
       const response = await fetch("/api/pending");
@@ -55,13 +57,13 @@ export function DetailedQuotes(props) {
     }
   };
 
+  // post quotes - update is_converted from false to true when "closed" button is clicked
   const moveTask = async (quoteId) => {
     axios
       .put(`api/quotescompleted/${quoteId}`, {
         selectedId: quoteId,
       })
       .then((res) => {
-        console.log("MADE IT TO THE BACKEND");
         setPending(pending.filter((quote) => quote.id !== quoteId));
         props.updateCompletedQuotes();
       })

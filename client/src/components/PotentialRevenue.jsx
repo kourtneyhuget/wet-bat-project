@@ -25,6 +25,7 @@ const theme = createMuiTheme({
   },
 });
 
+// material ui - table styling
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
