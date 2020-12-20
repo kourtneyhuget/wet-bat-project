@@ -6,7 +6,7 @@ This app was created as a solution for part of Wet Bat's FY2020 strategic action
 
 ## FINAL PRODUCT
 
-![demo of quick quote](<https://github.com/kourtneyhuget/wet-bat-project/blob/main/docs/Animated%20GIF-downsized_large%20(3).gif?raw=true>)
+[Video of user going through Wet Bat Dashboard](https://drive.google.com/file/d/1Jr_54ZAOoHcjue7ot14qaYyjkuFIIP3J/view?usp=sharing)
 
 ## RUNNING PROJECT ON LOCAL MACHINE
 
